@@ -1,29 +1,33 @@
 // src/App.js
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { Navbar, Sidebar, Footer } from './components/layout';
-import routes from './config/routes';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import MainLayout from './components/layout/MainLayout';
+import LoginPage from './features/auth/pages/LoginPage';
+import { AuthProvider } from './context/AuthContext';
+import { useAuth } from './context/AuthContext';
+
+const AppRoutes = () => {
+  const { isAuthenticated } = useAuth();
+
+  return (
+    <Routes>
+      <Route
+        path="/login"
+        element={!isAuthenticated ? <LoginPage /> : <Navigate to="/dashboard" />}
+      />
+      <Route
+        path="/*"
+        element={isAuthenticated ? <MainLayout /> : <Navigate to="/login" />}
+      />
+    </Routes>
+  );
+};
 
 const App = () => {
   return (
-    <div className="app">
-    <Navbar />
-    <div className="main-content">
-        <Sidebar />
-        <div className="page-content">
-        <Routes>
-            {routes.map((route) => (
-            <Route
-                key={route.path}
-                path={route.path}
-                element={route.element}
-            />
-            ))}
-        </Routes>
-        </div>
-    </div>
-    <Footer />
-    </div>
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
   );
 };
 

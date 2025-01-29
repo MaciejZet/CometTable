@@ -1,0 +1,382 @@
+/* Główne kontenery */
+.list-view, .kanban-view {
+  padding: 20px;
+}
+
+/* Wspólne style dla kart zadań */
+.task-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Kanban */
+.kanban-board {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  overflow-x: auto;
+  min-height: calc(100vh - 200px);
+}
+
+.kanban-column {
+  background: #f4f5f7;
+  border-radius: 8px;
+  min-width: 300px;
+  padding: 16px;
+  flex: 1;
+}
+
+.kanban-column.is-over {
+  background: #e6f7ff;
+}
+
+.column-title {
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #1890ff;
+  font-weight: 600;
+}
+
+/* Lista zadań */
+.modern-table {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.table-row {
+  transition: all 0.3s ease;
+}
+
+/* Elementy edytowalne */
+.editable-cell {
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.editable-cell:hover, .editable-cell:focus {
+  border-color: #40a9ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+  background: #fff;
+}
+
+/* Etykiety i statusy */
+.task-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.status-select {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.priority-select {
+  width: 100%;
+}
+
+.task-label {
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+  margin: 0;
+}
+
+/* Nagłówki i kontrolki */
+.list-header {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.page-title {
+  margin-bottom: 24px !important;
+  color: #1a1a1a;
+}
+
+.filter-dropdown {
+  padding: 8px;
+  border-radius: 6px;
+  background: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* Karty zadań - szczegóły */
+.task-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.task-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.due-date {
+  color: #666;
+  font-size: 12px;
+}
+
+.priority-icon {
+  color: #ff4d4f;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .kanban-board {
+    flex-direction: column;
+  }
+  
+  .kanban-column {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+}
+
+/* Animacje */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.task-card {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.ant-table-filter-trigger {
+  color: #1890ff;
+}
+
+.ant-table-filter-trigger.active {
+  background-color: #e6f7ff;
+}
+
+/* Nowe funkcje */
+.task-details {
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+.task-activity {
+  margin-bottom: 20px;
+}
+
+.task-attachments {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 20px;
+}
+
+.bulk-actions-toolbar {
+  background: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Wskaźniki statusu i priorytetu */
+.status-badge {
+  border-radius: 10px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.priority-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* ...existing styles... */
+
+.modern {
+  background: linear-gradient(to bottom right, #ffffff, #f8f9ff);
+}
+
+.list-view {
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.saved-view-card {
+  margin-bottom: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.saved-view-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.attachment-card {
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.category-tag {
+  border-radius: 12px;
+  padding: 4px 12px;
+  background: #f0f5ff;
+  border: none;
+  color: #1890ff;
+}
+
+/* Animacje */
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.drawer-content {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* ...existing styles... */
+
+.saved-views-dropdown {
+  min-width: 200px;
+}
+
+.column-visibility-menu {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.view-menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.view-menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+.column-toggle-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.column-toggle-item:hover {
+  background-color: #f5f5f5;
+}
+
+/* ...existing styles... */
+
+.saved-views-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.saved-view-button {
+  border-radius: 20px;
+  padding: 4px 16px;
+}
+
+.saved-view-button:not(.ant-btn-primary) {
+  background: #f0f2f5;
+}
+
+.column-visibility-menu {
+  min-width: 250px;
+}
+
+.visible-column-icon {
+  color: #1890ff;
+}
+
+.hidden-column-icon {
+  color: #bfbfbf;
+}
+
+.ant-menu-item-group-title {
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+.column-visibility-menu .ant-menu-item {
+  padding-left: 16px !important;
+}
+
+.column-visibility-menu .ant-menu-item:hover {
+  background-color: #f5f5f5;
+}
+
+.column-visibility-menu .ant-menu-item-active {
+  background-color: #e6f7ff;
+}
+
+/* ...existing styles... */
+
+.view-button-group {
+  margin: 4px;
+}
+
+.saved-view-button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.delete-view-button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 0 8px;
+}
+
+.delete-view-button:hover {
+  color: #ff4d4f;
+  border-color: #ff4d4f;
+}

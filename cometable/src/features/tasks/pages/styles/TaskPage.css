@@ -1,0 +1,76 @@
+.task-page {
+  padding: 20px;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.view-controls {
+  margin-bottom: 24px;
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.view-switcher {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.view-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-option:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.view-option.active {
+  background: #0ea5e9;
+  color: white;
+}
+
+.view-option i {
+  font-size: 16px;
+}
+
+.view-option span {
+  font-weight: 500;
+}
+
+.view-content {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .view-switcher {
+    justify-content: center;
+  }
+  
+  .view-option {
+    padding: 8px 12px;
+  }
+  
+  .view-option span {
+    display: none;
+  }
+  
+  .view-option i {
+    font-size: 18px;
+  }
+}

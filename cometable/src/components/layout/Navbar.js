@@ -18,9 +18,6 @@ const Navbar = () => {
         <Link to="/">CometTable</Link>
       </div>
       <div className="navbar-menu">
-        <Link to="/dashboard">Dashboard</Link>
-        <Link to="/crm/leads">CRM</Link>
-        <Link to="/erp/inventory">ERP</Link>
         <button onClick={handleLogout} className="nav-button">
           Wyloguj
         </button>

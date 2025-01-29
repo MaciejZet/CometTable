@@ -4,7 +4,9 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout';
 import LoginPage from './features/auth/pages/LoginPage';
 import { AuthProvider } from './context/AuthContext';
+import { TaskProvider } from './features/tasks/store/TaskContext';
 import { useAuth } from './context/AuthContext';
+
 
 const AppRoutes = () => {
   const { isAuthenticated } = useAuth();
@@ -17,7 +19,15 @@ const AppRoutes = () => {
       />
       <Route
         path="/*"
-        element={isAuthenticated ? <MainLayout /> : <Navigate to="/login" />}
+        element={
+          isAuthenticated ? (
+            <TaskProvider>
+              <MainLayout />
+            </TaskProvider>
+          ) : (
+            <Navigate to="/login" />
+          )
+        }
       />
     </Routes>
   );
@@ -26,7 +36,9 @@ const AppRoutes = () => {
 const App = () => {
   return (
     <AuthProvider>
-      <AppRoutes />
+      <TaskProvider>
+        <AppRoutes />
+      </TaskProvider>
     </AuthProvider>
   );
 };

@@ -4,6 +4,7 @@ import HomePage from '../pages/HomePage';
 import LeadsPage from '../features/crm/pages/LeadsPage';
 import InventoryPage from '../features/erp/pages/InventoryPage';
 import DashboardPage from '../pages/DashboardPage';
+import KanbanPage from '../features/tasks/pages/KanbanPage';
 
 const routes = [
   {
@@ -21,7 +22,11 @@ const routes = [
   {
     path: '/erp/inventory',
     element: <InventoryPage />
-  }
+  },
+  {
+    path: '/tasks/kanban',
+    element: <KanbanPage />,
+  },
 ];
 
 export default routes;

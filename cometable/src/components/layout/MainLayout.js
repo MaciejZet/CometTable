@@ -4,7 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
-import routes from '../../config/routes';
+import DashboardPage from '../../pages/DashboardPage';
+import TaskPage from '../../features/tasks/pages/TaskPage';
 
 const MainLayout = () => {
   return (
@@ -14,13 +15,9 @@ const MainLayout = () => {
         <Sidebar />
         <div className="page-content">
           <Routes>
-            {routes.map((route) => (
-              <Route
-                key={route.path}
-                path={route.path}
-                element={route.element}
-              />
-            ))}
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/tasks/*" element={<TaskPage />} />
+            {/* Inne trasy */}
           </Routes>
         </div>
       </div>

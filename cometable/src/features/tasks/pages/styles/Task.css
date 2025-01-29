@@ -1,0 +1,33 @@
+/* src/features/tasks/styles/Task.css */
+.kanban-board {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+  }
+  
+  .kanban-column {
+    background: #f4f5f7;
+    border-radius: 8px;
+    min-width: 300px;
+    padding: 16px;
+  }
+  
+  .task-card {
+    background: white;
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .task-card h4 {
+    margin: 0 0 8px 0;
+  }
+  
+  .task-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
